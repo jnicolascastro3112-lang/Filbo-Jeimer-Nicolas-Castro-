@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Voices | Book Fair 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; }
+        .hero { background: linear-gradient(135deg, #1e40af, #6d28d9); }
+        .card-hover:hover { transform: translateY(-10px); transition: all 0.4s; }
+        img { transition: transform 0.4s ease; }
+        img:hover { transform: scale(1.05); }
+        .like-btn { transition: all 0.3s; }
+        .like-btn.liked { color: #ec4899; animation: pop 0.3s; }
+        @keyframes pop { 0% { transform: scale(1); } 50% { transform: scale(1.4); } 100% { transform: scale(1); } }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- HEADER -->
+    <header class="hero text-white py-20 text-center">
+        <h1 class="text-5xl font-bold mb-2">Admin Voices</h1>
+        <h2 class="text-3xl">Mini-Blog from the Book Fair 2026</h2>
+        <p class="mt-6 text-xl">Jeimer Nicolás Castro • Fundación Universitaria Compensar</p>
+    </header>
+
+    <div class="max-w-4xl mx-auto px-6 py-12">
+
+        <!-- WELCOME -->
+        <section class="bg-white rounded-3xl shadow-2xl p-10 mb-12 card-hover">
+            <h3 class="text-3xl font-bold text-indigo-700 mb-6">Welcome to my Mini-Blog</h3>
+            <p class="text-lg leading-relaxed text-gray-700">
+                Welcome to <strong>Admin Voices</strong>, my personal space where I connect the world of books with administration, 
+                leadership and professional development. This mini-blog is the final product of my visit to the Book Fair 2026.
+            </p>
+        </section>
+
+        <!-- PHOTOS -->
+        <section class="mb-12">
+            <h3 class="text-2xl font-bold text-center mb-8 text-gray-800">📸 Special Moments from the Book Fair</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <img src="https://i.imgur.com/Z0wR2Jn.jpeg" alt="Group at the Book Fair" class="rounded-3xl shadow-2xl w-full">
+                <img src="https://i.imgur.com/1w8yG9G.jpeg" alt="Marx y las Comunas Book" class="rounded-3xl shadow-2xl w-full">
+                <img src="https://i.imgur.com/sIIpIvl.jpeg" alt="Group at the bookstore" class="rounded-3xl shadow-2xl w-full md:col-span-2">
+            </div>
+        </section>
+
+        <!-- BOOK SPOTLIGHT -->
+        <section class="bg-white rounded-3xl shadow-2xl p-10 mb-12 card-hover">
+            <h3 class="text-3xl font-bold text-indigo-700 mb-6">Book Spotlight</h3>
+            <h4 class="text-2xl font-semibold mb-4">"Marx y las Comunas" by José Ernesto Nováez Guerrero</h4>
+            <p class="text-gray-700 leading-relaxed">
+                This book offers a deep analysis of Karl Marx's ideas and their direct relationship with the Paris Commune of 1871. 
+                It explores themes such as collective organization, revolutionary leadership, and the power of the people. 
+                Although it is a political history book, it contains powerful lessons about management, teamwork and strategic communication.
+            </p>
+        </section>
+
+        <!-- ADMINISTRATIVE CONNECTION -->
+        <section class="bg-white rounded-3xl shadow-2xl p-10 mb-12 card-hover">
+            <h3 class="text-3xl font-bold text-indigo-700 mb-6">Administrative Connection</h3>
+            <p class="text-gray-700 leading-relaxed">
+                In the field of administration, this book is highly relevant. It shows how good organization and clear leadership 
+                can change the course of history. These concepts can be applied in companies to improve team management, 
+                internal communication and crisis management. Understanding these ideas helps future administrators make better decisions.
+            </p>
+        </section>
+
+        <!-- PERSONAL REFLECTION -->
+        <section class="bg-white rounded-3xl shadow-2xl p-10 mb-12 card-hover">
+            <h3 class="text-3xl font-bold text-indigo-700 mb-6">Personal Reflection</h3>
+            <p class="text-gray-700 leading-relaxed">
+                I really liked visiting the Book Fair. Sharing this experience with my friends made it even more special. 
+                This book inspired me to think about the importance of leadership and organization in any work environment. 
+                In my future career, I want to apply these principles to become a better leader and administrator.
+            </p>
+        </section>
+
+        <!-- INTERACTIVE SECTION -->
+        <div class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-3xl p-10 text-center">
+            <h3 class="text-2xl font-bold mb-6">Did you like this Mini-Blog?</h3>
+            <button onclick="likePost(this)" class="like-btn bg-white text-purple-600 hover:bg-pink-100 font-bold text-xl px-10 py-4 rounded-2xl flex items-center gap-3 mx-auto">
+                <i class="fas fa-heart"></i> 
+                <span>Like this Post</span>
+            </button>
+            <p id="likeCount" class="mt-4 text-lg">0 people liked this mini-blog</p>
+        </div>
+
+        <div class="text-center mt-12 text-gray-500">
+            <p>Jeimer Nicolás Castro • Book Fair Activity • May 2026</p>
+        </div>
+    </div>
+
+    <script>
+        function likePost(btn) {
+            btn.classList.toggle('liked');
+            let count = document.getElementById('likeCount');
+            let num = parseInt(count.textContent);
+            count.textContent = (num + 1) + " people liked this mini-blog";
+        }
+    </script>
+</body>
+</html>
